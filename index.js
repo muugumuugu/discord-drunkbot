@@ -1,7 +1,8 @@
+require('dotenv').config();
 console.log("Beep beep! 🤖");
 const Discord = require("discord.js");
 const client = new Discord.Client();
-client.login('ODQxMDM2NjQ5ODYwNTYyOTQ0.YJg6aw.DigQpj1oehZftHloHF1V4-dnJVw');
+client.login(process.env.LOGIN_ID);
 
 client.on("ready", readyDiscord);
 
@@ -13,7 +14,7 @@ function readyDiscord() {
 
 client.on("message",(msg)=>{
 const walk = require("./randomwalk.js");
-const id='841036649860562944';
+const id=process.env.WALKID;
 const commands = {walk};
     if (msg.mentions.has(id)) {
         console.log("beep");
